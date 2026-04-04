@@ -15,7 +15,7 @@ export function Header() {
   const { toggleSidebar, isMobile } = useSidebarContext();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between border-b border-stroke text-white dark:text-white bg-[#3f51b5] px-4 py-5 shadow-1 dark:border-stroke-dark dark:bg-gray-dark md:px-5 2xl:px-10">
+    <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-between border-b border-stroke text-white dark:text-white bg-[#3f51b5] px-4 py-2 shadow-1 dark:border-stroke-dark dark:bg-gray-dark md:px-5 2xl:px-10">
       <button
         onClick={toggleSidebar}
         className="rounded-lg   px-1.5 py-1 dark:border-stroke-dark dark:bg-[#020D1A] hover:dark:bg-[#FFFFFF1A]"
@@ -39,7 +39,7 @@ export function Header() {
         <h1 className="mb-0.5 text-heading-5 font-bold text-white   ">
           Dashboard
         </h1>
-        <p className="font-medium">Next.js Admin Dashboard Solution</p>
+         
       </div>
 
       <div className="flex flex-1 items-center justify-end gap-2 min-[375px]:gap-4">
