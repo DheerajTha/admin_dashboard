@@ -35,7 +35,7 @@ export function Header() {
         </Link>
       )}
 
-      <div className="max-xl:hidden pl-10">
+      <div className="max-xl:hidden pl-8">
         <h1 className="mb-0.5 text-heading-5 font-bold text-white   ">
           Dashboard
         </h1>
