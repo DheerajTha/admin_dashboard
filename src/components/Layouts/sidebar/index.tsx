@@ -55,9 +55,15 @@ export function Sidebar() {
 
       <aside
         className={cn(
-          "max-w-[230px] overflow-hidden border-r border-gray-200 bg-white transition-[width] duration-200 ease-linear dark:border-gray-800 dark:bg-gray-dark",
-          isMobile ? "fixed bottom-0 top-0 z-50" : "sticky top-0 h-screen",
-          isOpen ? "w-full" : "w-0",
+          "h-screen overflow-hidden border-r border-gray-200 bg-white transition-all duration-300 ease-in-out dark:border-gray-800 dark:bg-gray-dark",
+          isMobile
+            ? "fixed left-0 top-0 z-50 w-[250px] transform"
+            : "relative w-[250px]",
+          isOpen
+            ? "translate-x-0"
+            : isMobile
+            ? "-translate-x-full"
+            : "w-0",
         )}
         aria-label="Main navigation"
         aria-hidden={!isOpen}
