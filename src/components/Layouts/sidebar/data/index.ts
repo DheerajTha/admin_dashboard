@@ -7,12 +7,8 @@ export const NAV_DATA = [
       {
         title: "Dashboard",
         icon: Icons.HomeIcon,
-        items: [
-          {
-            title: "eCommerce",
-            url: "/",
-          },
-        ],
+        url: "/",
+        items: [],
       },
       {
         title: "Calendar",
@@ -44,12 +40,7 @@ export const NAV_DATA = [
         title: "Tables",
         url: "/tables",
         icon: Icons.Table,
-        items: [
-          {
-            title: "Tables",
-            url: "/tables",
-          },
-        ],
+        items: [],
       },
       {
         title: "Pages",
@@ -66,30 +57,7 @@ export const NAV_DATA = [
   {
     label: "OTHERS",
     items: [
-      {
-        title: "Charts",
-        icon: Icons.PieChart,
-        items: [
-          {
-            title: "Basic Chart",
-            url: "/charts/basic-chart",
-          },
-        ],
-      },
-      {
-        title: "UI Elements",
-        icon: Icons.FourCircle,
-        items: [
-          {
-            title: "Alerts",
-            url: "/ui-elements/alerts",
-          },
-          {
-            title: "Buttons",
-            url: "/ui-elements/buttons",
-          },
-        ],
-      },
+     
       {
         title: "Authentication",
         icon: Icons.Authentication,
