@@ -14,12 +14,9 @@ import {
 } from "react-icons/fa";
 import { MdVerified, MdOutlineEmail, MdBadge } from "react-icons/md";
 import { HiOutlineUserGroup } from "react-icons/hi";
-import { TbUserStar, TbUserExclamation } from "react-icons/tb";
+import { TbUserStar } from "react-icons/tb";
 
 import { data } from "./tabler-helper";
- 
- 
- 
 const ITEMS_PER_PAGE = 10;
 
 export default function TableComponent() {
@@ -27,9 +24,6 @@ export default function TableComponent() {
   const [currentPage, setCurrentPage] = useState(1); 
   const [selectedRole, setSelectedRole] = useState<string>("All");
   const [selectedStatus, setSelectedStatus] = useState<string>("All");
-  
-
-
   // Filter data based on search, role, and status
   const filteredData = useMemo(() => {
     return data.filter((user) => {
@@ -41,9 +35,6 @@ export default function TableComponent() {
       return matchesSearch && matchesRole && matchesStatus;
     });
   }, [search, selectedRole, selectedStatus]);
-
-   
-
 
   // Pagination
   const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
@@ -81,6 +72,15 @@ export default function TableComponent() {
       </span>
     );
   };
+
+  // date modified 
+
+  const formatDate = (date: string) => {
+    if( typeof window === "undefined") return date; // ssr safety check
+    return new Date(date).toLocaleDateString('en-US', 
+      {month: 'short', day: 'numeric', year: 'numeric'}
+    )
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
