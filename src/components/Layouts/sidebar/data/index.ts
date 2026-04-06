@@ -10,12 +10,7 @@ export const NAV_DATA = [
         url: "/",
         items: [],
       },
-      {
-        title: "Calendar",
-        url: "/calendar",
-        icon: Icons.Calendar,
-        items: [],
-      },
+       
       {
         title: "Profile",
         url: "/profile",
@@ -25,16 +20,9 @@ export const NAV_DATA = [
       {
         title: "Forms",
         icon: Icons.Alphabet,
-        items: [
-          {
-            title: "Form Elements",
-            url: "/forms/form-elements",
-          },
-          {
-            title: "Form Layout",
-            url: "/forms/form-layout",
-          },
-        ],
+        url: "/forms",
+        items: [],
+      
       },
       {
         title: "Tables",
@@ -42,16 +30,7 @@ export const NAV_DATA = [
         icon: Icons.Table,
         items: [],
       },
-      {
-        title: "Pages",
-        icon: Icons.Alphabet,
-        items: [
-          {
-            title: "Settings",
-            url: "/pages/settings",
-          },
-        ],
-      },
+       
     ],
   },
   {
