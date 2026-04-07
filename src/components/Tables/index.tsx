@@ -199,9 +199,6 @@ export default function TableComponent() {
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">User</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Role</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Department</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Department</th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Department</th>
-                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Department</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Joined</th>
                   <th className="px-6 py-4 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
@@ -238,15 +235,6 @@ export default function TableComponent() {
                       <span className="text-sm text-gray-600">{user.department}</span>
                      </td>
 
-                     <td className="px-6 py-4">
-                      <span className="text-sm text-gray-600">{user.department}</span>
-                     
-                     </td><td className="px-6 py-4">
-                      <span className="text-sm text-gray-600">{user.department}</span>
-                     </td><td className="px-6 py-4">
-                      <span className="text-sm text-gray-600">{user.department}</span>
-                     </td>
-                    
                     <td className="px-6 py-4">
                       {getStatusBadge(user.status)}
                      </td>
@@ -254,7 +242,7 @@ export default function TableComponent() {
                     <td className="px-6 py-4">
                       <div className="text-sm">
                         <p className="text-gray-700">{new Date(user.joinDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
-                        <p className="text-xs text-gray-400">Active: {new Date(user.lastActive).toLocaleDateString()}</p>
+                        <p className="text-xs text-gray-400">Active: {formatDate(user.lastActive)}</p>
                       </div>
                      </td>
                     

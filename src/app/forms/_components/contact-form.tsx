@@ -1,12 +1,22 @@
+"use client";
 import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
 import InputGroup from "@/components/FormElements/InputGroup";
 import { TextAreaGroup } from "@/components/FormElements/InputGroup/text-area";
 import { Select } from "@/components/FormElements/select";
 import { ShowcaseSection } from "@/components/Layouts/showcase-section";
+import { useState } from "react";
 import { FaFileUpload } from "react-icons/fa";
 
 
 export function ContactForm() {
+
+  const [image, setImage] = useState<string | null>(null);
+
+  const handleChange = (e: any) => {
+   const file = e.target?.files?.[0]
+   setImage(URL.createObjectURL(file))
+  }
+
   return (
     <ShowcaseSection title="Contact Form" className="!p-6.5">
       <form action="#">
@@ -58,23 +68,19 @@ export function ContactForm() {
             { label: "Option 6", value: "OPTION6" },
           ]}
         />
-        <TextAreaGroup label="Message" placeholder="Type your message" />
+        
 
         <div className="col-span-full">
               <label htmlFor="photo" className="block   text-body-sm font-medium text-dark dark:text-white">
                 Photo
               </label>
               <div className="mt-2 flex items-center gap-x-3">
-                <FaFileUpload  aria-hidden="true" className="size-12 text-gray-500" />
-                <button
-                  type="button"
-                  className="rounded-md   px-3 py-2  text-body-sm font-medium text-dark dark:text-white inset-ring inset-ring-white/5  
-                    hover:bg-gray-100 dark:hover:bg-dark-200 dark:hover:bg-black"
-                >
-                  Change
-                </button>
+                <input type="file" onChange={handleChange} className="mb-4.5"/>
+                {image && <img src={image} alt="preview"  className=" rounded-lg w-40 h-40 mb-10 "/>}
               </div>
-            </div>
+        </div>
+
+        <TextAreaGroup label="Message" placeholder="Type your message" />
 
         <button className="mt-6 flex w-full justify-center rounded-lg bg-primary p-[13px] font-medium text-white hover:bg-opacity-90">
           Send Message

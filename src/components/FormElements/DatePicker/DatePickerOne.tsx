@@ -18,7 +18,7 @@ const DatePickerOne = ({ className = "" , ...props }) => {
   return (
     <div>
       <label className="mb-3 block text-body-sm font-medium text-dark dark:text-white">
-        Date picker
+        Choose Date
       </label>
       <div className={`relative ${className}`}>
         <input

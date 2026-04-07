@@ -1,4 +1,6 @@
 import * as Icons from "../icons";
+import { HiOutlineTemplate } from "react-icons/hi";
+
 
 export const NAV_DATA = [
   {
@@ -30,6 +32,13 @@ export const NAV_DATA = [
         icon: Icons.Table,
         items: [],
       },
+
+      {
+        title: "Templates",
+        url: "/templates",
+        icon: HiOutlineTemplate,
+        items: [],
+      }
        
     ],
   },
