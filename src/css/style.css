@@ -10,6 +10,9 @@
 
 @layer utilities {
   /* Chrome, Safari and Opera */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -43,6 +46,13 @@
   .inbox-height {
     @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
   }
+
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 /* third-party libraries CSS */

@@ -242,8 +242,7 @@ export default function TableComponent() {
                     <td className="px-6 py-4">
                       <div className="text-sm">
                         <p className="text-gray-700">{new Date(user.joinDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
-                        <p className="text-xs text-gray-400">Active: {formatDate(user.lastActive)}</p>
-                      </div>
+                       </div>
                      </td>
                     
                     <td className="px-6 py-4">

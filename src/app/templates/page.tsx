@@ -1,7 +1,7 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import TemplateSelector from "@/components/templates/TemplateSelector";
 import React, { Suspense } from "react";
- import TemplatePage from "./-components/template-component";
-
+  
 const Templates = () => {
   return (
     <div>
@@ -9,7 +9,7 @@ const Templates = () => {
 
       <Suspense fallback={<div>Loading...</div>}>
         <div className="mt-4 ">
-          <TemplatePage />
+          <TemplateSelector />
         </div>
       </Suspense>
     </div>
