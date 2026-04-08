@@ -15,13 +15,13 @@ export interface FormData {
   email: string
   phone: string
   message: string
-}
+  }
 
 export interface StepProps {
-  data: FormData
+data: FormData
   updateData: (field: string, value: string) => void
   next?: () => void
   back?: () => void
-  onSubmit?: () => void
+    onSubmit?: () => void
   templateName?: string
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { TemplateType } from '@/types/template.types'
 import { templatesConfig } from '@/constants/templates'
@@ -19,9 +19,14 @@ export default function TemplatePage() {
 
   const currentTemplate = templatesConfig[templateId]
   
+  useEffect(() => {
+    if (!currentTemplate) {
+      router.push('/')
+    }
+  }, [currentTemplate, router])
+
   if (!currentTemplate) {
-    router.push('/')
-    return null
+    return <div>Loading...</div>
   }
 
   const updateFormData = (field: string, value: string) => {
