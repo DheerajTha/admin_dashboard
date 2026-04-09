@@ -10,11 +10,11 @@ import ModernThankYou from '@/components/templates/modern/ModernThankYou'
 import { TemplateConfig, TemplateType } from '@/types/template.types'
  
 export const templatesConfig: Record<TemplateType, TemplateConfig> = {
-  modern: {
-    id: 'modern',
-    name: 'Modern Template',
-    description: 'A contemporary design with bold colors and gradients',
-    previewImage: '/templates/modern-preview.jpg',
+  bathmats: {
+    id: 'bathmats',
+    name: 'Bathmats Collection',
+    description: 'At Rugs In Style, cotton bath mats are more than just a bathroom accessory; they’re a thoughtful addition to your space, blending comfort with visual appeal. Designed to offer softness underfoot and a neat, dry surface post-shower, our cotton bath mats bring in both utility and elegance.',
+    previewImage: '/images/bathmats/RIS-BTH-8919-SKY-BLUE-2.jpg',
     stepOne: ModernStepOne,
     stepTwo: ModernStepTwo,
     thankYou: ModernThankYou,
@@ -23,7 +23,7 @@ export const templatesConfig: Record<TemplateType, TemplateConfig> = {
     id: 'classic',
     name: 'Classic Template',
     description: 'Traditional elegant design with vintage feel',
-    previewImage: '/templates/classic-preview.jpg',
+    previewImage: '/images/bathmats/RIS-BTH-8919-SKY-BLUE-2.jpg',
     stepOne: ClassicStepOne,
     stepTwo: ClassicStepTwo,
     thankYou: ClassicThankYou,
@@ -32,7 +32,7 @@ export const templatesConfig: Record<TemplateType, TemplateConfig> = {
     id: 'minimal',
     name: 'Minimal Template',
     description: 'Clean and simple design focusing on content',
-    previewImage: '/templates/minimal-preview.jpg',
+    previewImage: '/images/bathmats/RIS-BTH-8919-SKY-BLUE-2.jpg',
     stepOne: MinimalStepOne,
     stepTwo: MinimalStepTwo,
     thankYou: MinimalThankYou,
