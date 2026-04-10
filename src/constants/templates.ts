@@ -13,7 +13,7 @@ export const templatesConfig: Record<TemplateType, TemplateConfig> = {
   bathmats: {
     id: 'bathmats',
     name: 'Bathmats Collection',
-    description: 'At Rugs In Style, cotton bath mats are more than just a bathroom accessory; they’re a thoughtful addition to your space, blending comfort with visual appeal. Designed to offer softness underfoot and a neat, dry surface post-shower, our cotton bath mats bring in both utility and elegance.',
+    description: 'At Rugs In Style, cotton bath mats are more than just a bathroom accessory',
     previewImage: '/images/bathmats/RIS-BTH-8919-SKY-BLUE-2.jpg',
     stepOne: ModernStepOne,
     stepTwo: ModernStepTwo,
