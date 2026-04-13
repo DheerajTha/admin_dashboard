@@ -1,6 +1,6 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useIsMobile, useIsMobileOrTablet } from "@/hooks/use-mobile";
 import { createContext, useContext, useEffect, useState } from "react";
 
 type SidebarState = "expanded" | "collapsed";
@@ -10,6 +10,7 @@ type SidebarContextType = {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
   isMobile: boolean;
+  isTabletOrMobile: boolean;
   toggleSidebar: () => void;
 };
 
@@ -32,14 +33,15 @@ export function SidebarProvider({
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const isMobile = useIsMobile();
+  const isTabletOrMobile = useIsMobileOrTablet();
 
   useEffect(() => {
-    if (isMobile) {
+    if (isTabletOrMobile) {
       setIsOpen(false);
     } else {
       setIsOpen(true);
     }
-  }, [isMobile]);
+  }, [isTabletOrMobile]);
 
   function toggleSidebar() {
     setIsOpen((prev) => !prev);
@@ -52,6 +54,7 @@ export function SidebarProvider({
         isOpen,
         setIsOpen,
         isMobile,
+        isTabletOrMobile,
         toggleSidebar,
       }}
     >

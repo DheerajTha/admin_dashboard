@@ -12,7 +12,7 @@ import { useSidebarContext } from "./sidebar-context";
 
 export function Sidebar() {
   const pathname = usePathname();
-  const { setIsOpen, isOpen, isMobile, toggleSidebar } = useSidebarContext();
+  const { setIsOpen, isOpen, isMobile, isTabletOrMobile, toggleSidebar } = useSidebarContext();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
   const toggleExpanded = (title: string) => {
@@ -45,7 +45,7 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile Overlay */}
-      {isMobile && isOpen && (
+      {isTabletOrMobile && isOpen && (
         <div
           className="duration-900 fixed inset-0 z-40 bg-black/50 transition-opacity"
           onClick={() => setIsOpen(false)}
@@ -55,20 +55,26 @@ export function Sidebar() {
 
       <aside
         className={cn(
-          "duration-900 max-w-[230px] overflow-hidden border-r border-gray-200 bg-white transition-[width] ease-linear dark:border-gray-800 dark:bg-gray-dark",
-          isMobile ? "fixed bottom-0 top-0 z-50" : "sticky top-0 h-screen",
-          isOpen ? "w-[230px]" : "w-[70px]",
+          "duration-900 max-w-[230px] overflow-hidden border-r border-gray-200 bg-white transition-[width,transform] ease-linear dark:border-gray-800 dark:bg-gray-dark",
+          isTabletOrMobile ? "fixed bottom-0 top-0 z-50" : "sticky top-0 h-screen",
+          isTabletOrMobile
+            ? isOpen
+              ? "w-[230px] translate-x-0"
+              : "w-0 -translate-x-full"
+            : isOpen
+            ? "w-[230px]"
+            : "w-[70px]",
         )}
         aria-label="Main navigation"
         // aria-hidden={!isOpen}
         // inert={!isOpen}
-        aria-hidden={false}
+        aria-hidden={isTabletOrMobile ? !isOpen : false}
       >
         <div className="flex h-full flex-col py-10 pr-[7px]">
           <div className="relative pr-4.5">
             <Link
               href={"/"}
-              onClick={() => isMobile && toggleSidebar()}
+              onClick={() => isTabletOrMobile && toggleSidebar()}
               className={cn(
                 "px-0 py-2.5 min-[850px]:py-0",
                 !isOpen && "justify-center",
