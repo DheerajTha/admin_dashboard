@@ -77,7 +77,6 @@ export default function ProductPage() {
     length: "",
     color: "",
     name: "",
-     
     stock: "",
     description: "",
   });
@@ -212,12 +211,10 @@ export default function ProductPage() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <FaCube className="text-gray-600" />
-            Add New Product
+            Add New Category
           </h1>
-          <p className="text-gray-500 text-sm mt-1">Fill in the details below to add a new product to your inventory</p>
+          <p className="text-gray-500 text-sm mt-1">Fill in the details below to add a new category to your inventory</p>
         </div>
-
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Form Sections */}
           <div className="p-6 space-y-8">

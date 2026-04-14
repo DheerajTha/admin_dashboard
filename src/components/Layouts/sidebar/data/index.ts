@@ -1,5 +1,7 @@
 import * as Icons from "../icons";
 import { HiOutlineTemplate } from "react-icons/hi";
+import { BiCategory } from "react-icons/bi";
+import { GrGallery } from "react-icons/gr";
 
 
 export const NAV_DATA = [
@@ -30,6 +32,19 @@ export const NAV_DATA = [
         title: "Tables",
         url: "/tables",
         icon: Icons.Table,
+        items: [],
+      },
+
+      {
+        title: "Category",
+        url: "/category",
+        icon: BiCategory,
+        items: [],
+      },
+      {
+        title: "Media",
+        url: "/media",
+        icon: GrGallery,
         items: [],
       },
 
