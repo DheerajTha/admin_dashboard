@@ -69,6 +69,10 @@ export const NAV_DATA = [
             title: "Sign In",
             url: "/auth/sign_in",
           },
+          {
+            title: "Sign Up",
+            url: "/auth/sign-up",
+          },
         ],
       },
     ],

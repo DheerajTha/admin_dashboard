@@ -1,4 +1,4 @@
-import Signin from "@/components/Auth/Signin";
+import SignUp from "@/components/Auth/signup/page";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -8,16 +8,16 @@ export const metadata: Metadata = {
   title: "Sign in",
 };
 
-export default function SignIn() {
+export default function Signup() {
   return (
     <>
-      <Breadcrumb pageName="Sign In" />
+      <Breadcrumb pageName="Sign Up" />
 
       <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
         <div className="flex flex-wrap items-center">
           <div className="w-full xl:w-1/2">
             <div className="w-full p-4 sm:p-12.5 xl:p-15">
-              <Signin />
+              <SignUp />
             </div>
           </div>
 
