@@ -2,6 +2,7 @@ import * as Icons from "../icons";
 import { HiOutlineTemplate } from "react-icons/hi";
 import { BiCategory } from "react-icons/bi";
 import { GrGallery } from "react-icons/gr";
+import { AiFillProduct } from "react-icons/ai";
 
 
 export const NAV_DATA = [
@@ -21,13 +22,7 @@ export const NAV_DATA = [
         icon: Icons.User,
         items: [],
       },
-      {
-        title: "Forms",
-        icon: Icons.Alphabet,
-        url: "/forms",
-        items: [],
       
-      },
       {
         title: "Tables",
         url: "/tables",
@@ -39,6 +34,12 @@ export const NAV_DATA = [
         title: "Category",
         url: "/category",
         icon: BiCategory,
+        items: [],
+      },
+      {
+        title: "Product",
+        url: "/product",
+        icon: AiFillProduct,
         items: [],
       },
       {

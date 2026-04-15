@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Image from "next/image";
 import { FaEllipsisV, FaCheck, FaTrash, FaDownload, FaShare, FaCopy } from "react-icons/fa";
 import { CiGrid41, CiViewList } from "react-icons/ci";
+import { Products } from "@/components/product-from/Product_From";
 
 const products = [
   { id: 1, image: "/images/bathmats/RIS-BTH-7884-2.jpg", name: "Bath Mat 1", size: "2.4 MB", date: "2024-01-15" },
@@ -15,12 +16,14 @@ const products = [
   { id: 7, image: "/images/bathmats/RIS-BTH-7884-2.jpg", name: "Bath Mat 7", size: "3.1 MB", date: "2024-01-09" },
   { id: 8, image: "/images/bathmats/RIS-BTH-7884-2.jpg", name: "Bath Mat 8", size: "1.9 MB", date: "2024-01-08" },
   { id: 9, image: "/images/bathmats/RIS-BTH-7884-2.jpg", name: "Bath Mat 9", size: "2.6 MB", date: "2024-01-07" },
+  { id: 10, image: "/images/bathmats/RIS-BTH-7884-2.jpg", name: "Bath Mat 9", size: "2.6 MB", date: "2024-01-07" },
 ];
 
 export default function Media() {
   const [selected, setSelected] = useState<number[]>([]);
   const [menuOpen, setMenuOpen] = useState<number | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   const toggleSelect = (id: number) => {
     if (selected.includes(id)) {
@@ -44,10 +47,28 @@ export default function Media() {
     setSelected([]);
   };
 
+  const CategoryDropdown = ({ data }: any) => {
+  return (
+    <ul className="space-y-1">
+      {data.map((item: any) => (
+        <li key={item.id}>
+          <div className="px-3 py-2 hover:bg-gray-100 rounded cursor-pointer">
+            {item.name}
+          </div>
+          {item.children && (
+            <div className="ml-4 border-l pl-3">
+              <CategoryDropdown data={item.children} />
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
   return (
     <>
       <Breadcrumb pageName="Media" />
-
       <div className="p-4 md:p-6">
         {/* Top Action Bar */}
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
@@ -67,7 +88,20 @@ export default function Media() {
               </div>
             )}
           </div>
+           <div className="relative">
+            <button
+              onClick={() => setOpenDropdown(!openDropdown)}
+              className="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium hover:bg-gray-50"
+            >
+              Select Category
+            </button>
 
+            {openDropdown && (
+              <div className="absolute top-full left-0 mt-2 w-80 max-h-80 overflow-auto rounded-lg bg-white shadow-lg border z-50 p-2">
+                <CategoryDropdown data={Products} />
+              </div>
+            )}
+          </div>
           <div className="flex items-center gap-3">
             {/* View Toggle */}
             <div className="flex rounded-lg border border-gray-200 gap-4 bg-white p-1">
@@ -188,7 +222,8 @@ export default function Media() {
                     </div>
 
                     {/* Bottom Info */}
-                    <div className="absolute bottom-0 left-0 right-0 translate-y-full transform bg-gradient-to-t from-black/80 to-transparent p-3 transition-transform duration-300 group-hover:translate-y-0">
+                    <div className="absolute bottom-0 left-0 right-0 translate-y-full transform bg-gradient-to-t from-black/80 to-transparent p-3 
+                    transition-transform duration-300 group-hover:translate-y-0">
                       <p className="text-sm font-medium text-white">{item.name}</p>
                       <p className="text-xs text-white/80">{item.size}</p>
                     </div>

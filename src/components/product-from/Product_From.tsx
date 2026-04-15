@@ -21,7 +21,7 @@ type Category = {
   children?: Category[];
 };
 
-const Products: Category[] = [
+export const Products: Category[] = [
   {
     id: "home",
     name: "Home",
@@ -211,9 +211,9 @@ export default function ProductPage() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            Add New Category
+            Add New Product
           </h1>
-          <p className="text-gray-500 text-sm mt-1">Fill in the details below to add a new category to your inventory</p>
+          <p className="text-gray-500 text-sm mt-1">Fill in the details below to add a new Product to your inventory</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Form Sections */}
@@ -226,9 +226,9 @@ export default function ProductPage() {
                 <h3 className="font-semibold text-gray-700">Basic Information</h3>
               </div>
               
-              {/* Category Name */}
+              {/* Product Name */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1"> Category Name *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1"> Product Name *</label>
                 <input
                   type="text"
                   placeholder="e.g., Premium Wool Carpet"
@@ -241,7 +241,7 @@ export default function ProductPage() {
 
               {/* Product Selector */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Product *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Category *</label>
                 <div className="relative">
                   <div
                     className="border border-gray-300 rounded-xl p-3 cursor-pointer flex justify-between items-center hover:border-gray-400 transition-colors"

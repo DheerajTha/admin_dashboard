@@ -26,7 +26,7 @@ export default function SignupWithPassword() {
     e.preventDefault();
     // You can remove this code block
     setLoading(true);
-    setTimeout(() => {
+    setTimeout(() => { 
       setLoading(false);
     }, 1000);
   };
