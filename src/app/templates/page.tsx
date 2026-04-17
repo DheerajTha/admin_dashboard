@@ -1,17 +1,10 @@
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import TemplateSelector from "@/components/templates/TemplateSelector";
-import React, { Suspense } from "react";
-  
+import Link from "next/link";
+
 const Templates = () => {
   return (
-    <div>
-      <Breadcrumb pageName="Templates" />
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <div className="mt-4 ">
-          <TemplateSelector />
-        </div>
-      </Suspense>
+    <div className="flex gap-4">
+      <Link href="/templates/one">One</Link>
+      <Link href="/templates/two">Two</Link>
     </div>
   );
 };

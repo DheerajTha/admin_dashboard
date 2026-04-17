@@ -1,24 +1,9 @@
-"use client";
-import { StepProps } from "@/types/template.types";
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import React from 'react'
 
-export default function ModernStepTwo({
-  back,
-  data,
-  updateData,
-}: StepProps) {
-  const [selectedDesign, setSelectedDesign] = useState<number | null>(
-    data?.selectedDesign || null,
-  );
-
-  const handleDesignSelect = (designId: number) => {
-    setSelectedDesign(designId);
-    updateData({ selectedDesign: designId });
-  };
+const ModernStepTwo = () => {
  
-
-  const designs = [
+ const designs = [
     {
       id: 1,
       title: "COLLECTION BATHMATS [RIS-BTH-8919]",
@@ -56,19 +41,17 @@ export default function ModernStepTwo({
   ];
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-gradient-to-br from-slate-50 via-white to-blue-50 px-4 py-8">
-      <div className={`relative w-full   h-[500px] bg-white rounded-3xl shadow-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:shadow-3xl hover:scale-[1.02] ${
-                selectedDesign === 1 ? 'ring-4 ring-blue-500 ring-offset-4' : ''
-              }`}
-              onClick={() => handleDesignSelect(1)}
-            >
-              {selectedDesign === 1 && (
+    <div>
+      <div className="flex min-h-screen w-full flex-col items-center bg-gradient-to-br from-slate-50 via-white to-blue-50 px-4 py-8">
+      <div className={`relative w-full   h-[900px] bg-white rounded-3xl shadow-2xl overflow-hidden group cursor-pointer 
+      transition-all duration-500 hover:shadow-3xl hover:scale-[1.02]`}  >
+              
                 <div className="absolute top-4 right-4 z-30 bg-blue-500 text-white rounded-full p-2">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-              )}
+            
               
               <div className="absolute right-0 top-0 h-full w-3/5 overflow-hidden">
                 <Image
@@ -125,12 +108,9 @@ export default function ModernStepTwo({
         {designs.map((design) => (
           <div
             key={design.id}
-            onClick={() => handleDesignSelect(design.id)}
-            className={`group cursor-pointer overflow-hidden rounded-xl bg-white transition-all ${
-              selectedDesign === design.id
-                ? "border-blue-500 shadow-lg shadow-blue-100"
-                : "border-slate-200 hover:border-slate-300 hover:shadow-md"
-            }`}
+            
+            className={`group cursor-pointer overflow-hidden rounded-xl bg-white transition-all   "border-slate-200 hover:border-slate-300 hover:shadow-md"
+            `}
           >
             <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
               <Image
@@ -185,32 +165,16 @@ export default function ModernStepTwo({
                 </div>
               )}
 
-              {/* Select Button */}
-              {/* <button
-                className={`mt-4 w-full py-2.5 rounded-lg font-medium transition-colors ${
-                  selectedDesign === design.id
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                {selectedDesign === design.id ? "Selected " : "Choose Template"}
-              </button> */}
+               
             </div>
           </div>
         ))}
       </div>
-
-     
-        <div className="flex flex-col sm:flex-row gap-3 mt-10 w-full max-w-md">
-        <button
-          onClick={back}
-          className="flex-1 py-3 rounded-lg border-2 border-slate-200 text-slate-700 font-medium hover:bg-slate-50 hover:border-slate-300 transition-colors"
-        >
-          ← Back
-        </button>
-
-         
-      </div>  
+ 
     </div>
-  );
+
+    </div>
+  )
 }
+
+export default ModernStepTwo
