@@ -27,7 +27,7 @@ export default function SignIn() {
                  
                 <Image
                   className=""
-                  src={"/images/logo/RIS-New-Logo.png"}
+                  src={"/images/logo/new-logo.png.png"}
                   alt="Logo"
                   width={176}
                   height={32}

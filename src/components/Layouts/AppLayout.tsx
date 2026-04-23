@@ -4,21 +4,23 @@ import { PropsWithChildren } from "react";
 import { usePathname } from "next/navigation";
 import { Header } from "@/components/Layouts/header";
 import { Sidebar } from "@/components/Layouts/sidebar";
-
+ 
 export default function AppLayout({ children }: PropsWithChildren) {
   const pathname = usePathname();
   const isAuthSignIn = pathname === "/auth/sign_in" || pathname === "/auth/sign_in/";
   const isAuthSignUp = pathname === "/auth/sign-up" || pathname === "/auth/sign-up/";
 
-  if (isAuthSignIn) {
+  const templatePage = pathname.startsWith('/templates/')
+
+  if(templatePage ) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-2 dark:bg-[#020d1a] px-4 py-10">
-        <main className="w-full md:max-w-[1000px]">{children}</main>
+        <main className="w-full md:w-5/6">{children}</main>
       </div>
     );
   }
 
-  if (isAuthSignUp) {
+  if (isAuthSignIn || isAuthSignUp) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-2 dark:bg-[#020d1a] px-4 py-10">
         <main className="w-full md:max-w-[1000px]">{children}</main>

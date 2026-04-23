@@ -63,7 +63,7 @@ export default function NewPage() {
 
           <div className="absolute left-0 top-0 z-10 flex h-full w-[45%] flex-col justify-center rounded-r-3xl bg-white/90 p-8 shadow-lg backdrop-blur-sm">
             <Image
-              src="/images/logo/RIS-New-LOGO.png"
+              src="/images/logo/new-logo.png.png"
               alt="Template Preview"
               width={200}
               height={200}
@@ -175,7 +175,7 @@ export default function NewPage() {
 
           <div className="absolute left-0 top-0 z-10 flex h-full w-[45%] flex-col justify-center rounded-r-2xl bg-white/90 shadow-lg backdrop-blur-lg">
             <Image
-              src="/images/logo/RIS-New-LOGO.png"
+              src="/images/logo/new-logo.png.png"
               alt="Template Preview"
               width={200}
               height={200}
