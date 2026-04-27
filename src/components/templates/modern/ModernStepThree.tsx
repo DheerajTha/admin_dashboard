@@ -117,6 +117,7 @@ export default function ModernStepThree() {
                     alt={design.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>

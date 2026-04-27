@@ -8,20 +8,22 @@ import { useParams } from "next/navigation";
 
 const TemplatePage = () => {
   const params = useParams();
-  const type = params?.type;
+  const type = params?.type as string;
 
   const renderComponent = () => {
+    if (!type) {
+      return <div>Template type not found</div>;
+    }
+
     switch (type) {
       case "one":
         return <ModernStepOne />;
       case "two":
         return <ModernStepTwo />;
       case "three":
-        return <ModernStepThree/>
-
+        return <ModernStepThree />;
       case "four":
-        return <ModernStepFour/>
-   
+        return <ModernStepFour />;
       default:
         return <div>Template not found</div>;
     }

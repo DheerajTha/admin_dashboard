@@ -14,7 +14,7 @@ export default function ModernStepFour() {
       image: "/images/bathmats/RIS-BTH-8919-SKY-BLUE-2.jpg",
       tag: "COLLECTION BATHMATS",
       product_Code: "RIS-BTH-8919",
-       
+      product_color: "Sky Blue",
       product_size: "60×90 cms",
       product_material: "Front (Pile): 100% cotton",
       gradient: "from-blue-500 to-green-400",
@@ -35,7 +35,7 @@ export default function ModernStepFour() {
       image: "/images/bathmats/RIS-BTH-7884-2.jpg",
       tag: "COLLECTION BATHMATS",
       product_Code: "RIS-BTH-7884",
-      
+      product_color: "Multi Color",
       product_size: "60×90 cms",
       product_material: "Front (Pile): 100% cotton",
       gradient: "from-blue-900 to-green-400",
@@ -131,17 +131,16 @@ export default function ModernStepFour() {
                   alt={design.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
-                  <span className="inline-block rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-gray-900 backdrop-blur-sm dark:bg-gray-900/90
-                   dark:text-white sm:px-3 sm:py-1 sm:text-xs">
+                  <span className="inline-block rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-gray-900 backdrop-blur-sm dark:bg-gray-900/90 dark:text-white sm:px-3 sm:py-1 sm:text-xs">
                     {design.tag}
                   </span>
                 </div>
-                <div className="absolute bottom-3 right-3 rounded-full bg-black/50 px-2 py-0.5 text-[10px] text-white backdrop-blur-sm sm:bottom-4 sm:right-4 sm:px-3
-                 sm:py-1 sm:text-xs">
+                {/* <div className="absolute bottom-3 right-3 rounded-full bg-black/50 px-2 py-0.5 text-[10px] text-white backdrop-blur-sm sm:bottom-4 sm:right-4 sm:px-3 sm:py-1 sm:text-xs">
                   {String(index + 1).padStart(2, "0")}/{String(designs.length).padStart(2, "0")}
-                </div>
+                </div> */}
               </div>
 
               {/* Product Details */}
@@ -160,6 +159,14 @@ export default function ModernStepFour() {
                         </td>
                         <td className="px-3 py-2 text-xs text-gray-900 dark:text-white sm:px-4 sm:py-2.5 sm:text-sm">
                           {design.product_Code}
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-200 dark:border-gray-700">
+                        <td className="bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-700 dark:bg-gray-900/50 dark:text-gray-300 sm:px-4 sm:py-2.5 sm:text-sm">
+                          Color
+                        </td>
+                        <td className="px-3 py-2 text-xs text-gray-900 dark:text-white sm:px-4 sm:py-2.5 sm:text-sm">
+                          {design.product_color}
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 dark:border-gray-700">

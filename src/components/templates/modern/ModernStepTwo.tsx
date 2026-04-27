@@ -43,7 +43,7 @@ const ModernStepTwo = () => {
       <div className="flex min-h-screen w-full flex-col items-center bg-gradient-to-br from-slate-50 via-white to-blue-50 px-4 py-8">
         <div className="relative h-[600px] w-full overflow-hidden md:h-[800px] lg:h-[100vh]" >
           <div className="absolute inset-0">
-            <Image src="/education.jpg" alt="Hero Background" fill className="object-cover" priority />
+            <Image src="/education.jpg" alt="Hero Background" fill className="object-cover" priority sizes="100vw" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
           </div>
 
@@ -102,7 +102,7 @@ const ModernStepTwo = () => {
           {designs.map((design) => (
             <div
               key={design.id}
-              className={`border-slate-200 hover:shadow-md" group cursor-pointer overflow-hidden rounded-xl bg-white transition-all hover:border-slate-300`}
+              className={`border-slate-200 hover:shadow-md group cursor-pointer overflow-hidden rounded-xl bg-white transition-all hover:border-slate-300`}
             >
               <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
                 <Image

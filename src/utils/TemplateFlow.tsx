@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { FormData } from '@/types/template.types'
 import ModernStepOne from '@/components/templates/modern/ModernStepOne'
 import ModernStepTwo from '@/components/templates/modern/ModernStepTwo'
-import ModernThankYou from '@/components/templates/modern/ModernThankYou'
 
 export default function TemplateFlow() {
   const [step, setStep] = useState(1)
@@ -26,15 +25,11 @@ export default function TemplateFlow() {
   return (
     <>
       {step === 1 && (
-        <ModernStepOne next={next} back={back} data={data} updateData={updateData} />
+        <ModernStepOne />
       )}
 
       {step === 2 && (
-        <ModernStepTwo next={next} back={back} data={data} updateData={updateData} />
-      )}
-
-      {step === 3 && (
-        <ModernThankYou data={data} onSubmit={() => {}} updateData={updateData} />
+        <ModernStepTwo />
       )}
     </>
   )
